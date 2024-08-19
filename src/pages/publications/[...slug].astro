@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import ArticleTopLayout from "@layouts/ArticleTopLayout.astro"
+import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro"
+
+
+// Create the static publications pages
+export async function getStaticPaths() {
+	const publications = await getCollection("publications")
+	return publications.map((publications) => ({
+		params: { slug: publications.slug },
+		props: publications,
+	}))
+}
+
+// Get the requested publication
+type Props = CollectionEntry<"publications">
+const publication = Astro.props
+const { title, summary } = publication.data
+---
+
+<PageLayout title={title} description={summary}>
+  <TopLayout>
+    <div class="animate">
+      <ArticleTopLayout entry={publication} />
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <ArticleBottomLayout entry={publication} />
+    </div>
+  </BottomLayout>
+</PageLayout>

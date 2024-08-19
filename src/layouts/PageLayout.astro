@@ -1,0 +1,28 @@
+---
+import { SITE } from "@consts"
+
+import "@styles/global.css"
+
+import Meta from "@layouts/Meta.astro"
+import Header from "@layouts/Header.astro"
+import Footer from "@layouts/Footer.astro"
+import Drawer from "@layouts/Drawer.astro"
+
+
+const { title, description } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <Meta title={`${title} | ${SITE.TITLE}`} description={description} />
+  </head>
+  <body>
+    <Header />
+    <Drawer />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
