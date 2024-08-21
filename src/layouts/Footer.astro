@@ -28,11 +28,14 @@ import Container from "@layouts/Container.astro"
       <Container size="md">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="flex flex-col items-center sm:items-start">
-            <a href="/" class="flex gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-              <svg class="size-6 fill-current">
-                <use href="/brand.svg#brand"/>
-              </svg>
-              {SITE.TITLE}
+            <a href="/" class="flex gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center">
+              <!-- <svg class="size-6 fill-current">
+                <use href="/logos/logo-white.svg"/>
+              </svg> -->
+              <img src="/logos/logo-white.svg" class="size-5 fill-current" />
+              <div class="flex flex-col justify-end mt-1">
+                <p class="text-center">{SITE.TITLE}</p>
+              </div>
             </a>
           </div>
           <div class="flex gap-2 justify-center sm:justify-end items-center">
@@ -50,13 +53,13 @@ import Container from "@layouts/Container.astro"
       <Container size="md">
         <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="order-2 sm:order-1 flex flex-col items-center justify-center sm:items-start">
-            <div class="statement">
-              <a href="https://github.com/markhorn-dev/astro-sphere" class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-                Adapted from Astro Sphere.
-              </a>
-            </div>
             <div class="text-sm mt-2">
               Copyright &copy; Zhengxin Yang 2024 - Present. All Rights Reserved
+            </div>
+            <div class="statement">
+              <a href="https://github.com/markhorn-dev/astro-sphere" class="text-current text-sm hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+                Adapted from Astro Sphere.
+              </a>
             </div>
           </div>
   
@@ -71,7 +74,7 @@ import Container from "@layouts/Container.astro"
                     class="group size-10 rounded-full p-2 items-center justify-center hover:bg-black/5 dark:hover:bg-white/20  blend"
                   >
                     <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend">
-                      <use href={`/social.svg#${SOCIAL.ICON}`} />
+                      <use href={`/logos/social.svg#${SOCIAL.ICON}`} />
                     </svg>
                   </a>
                 ))

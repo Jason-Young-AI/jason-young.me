@@ -64,13 +64,13 @@ export const LINKS: Links = [
 // Socials
 export const SOCIALS: Socials = [
   { 
-    NAME: "Email",
+    NAME: "E-Mail",
     ICON: "email", 
     TEXT: "AI.Jason.Young@outlook.com",
     HREF: "mailto:AI.Jason.Young@outlook.com",
   },
   { 
-    NAME: "Github",
+    NAME: "GitHub",
     ICON: "github",
     TEXT: "Jason-Young-AI",
     HREF: "https://github.com/Jason-Young-AI"

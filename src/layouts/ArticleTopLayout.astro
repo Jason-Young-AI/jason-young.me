@@ -30,13 +30,13 @@ const originalLink = collection === "posts" ? data.originalLink : null
   <div class="flex flex-wrap text-sm uppercase mt-12 gap-3 opacity-75">
     <div class="flex items-center gap-2">
       <svg class="size-5 stroke-current">
-        <use href="/ui.svg#calendar"/>
+        <use href="/logos/ui.svg#calendar"/>
       </svg>
       {formatDate(date)}
     </div>
     <div class="flex items-center gap-2">
       <svg class="size-5 stroke-current">
-        <use href="/ui.svg#book-open"/>
+        <use href="/logos/ui.svg#book-open"/>
       </svg>
       {readingTime(body)}
     </div>
@@ -50,21 +50,21 @@ const originalLink = collection === "posts" ? data.originalLink : null
   {(arxivLink || officialLink) && 
   <div class="mt-4 flex flex-wrap gap-2">
     {arxivLink && 
-      <a href={arxivLink} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+      <a href={arxivLink} target="_blank" class="group flex gap-1 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
         <svg class="size-4">
-          <use href="/ui.svg#arxiv" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+          <use href="/logos/ui.svg#arxiv" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
         </svg>
-        <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
+        <span class="text-current text-sm group-hover:text-black group-hover:dark:text-white blend">
           arXiv
         </span>
       </a>
     }
     {officialLink && 
-      <a href={officialLink} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+      <a href={officialLink} target="_blank" class="group flex gap-1 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
         <svg class="size-4">
-          <use href="/ui.svg#official" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+          <use href="/logos/ui.svg#official" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
         </svg>
-        <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
+        <span class="text-current text-sm group-hover:text-black group-hover:dark:text-white blend">
           Official Version
         </span>
       </a>
@@ -74,12 +74,12 @@ const originalLink = collection === "posts" ? data.originalLink : null
 
   {sourceLink && 
   <div class="mt-4 flex flex-wrap gap-2">
-    <a href={sourceLink} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+    <a href={sourceLink} target="_blank" class="group flex gap-1 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
       <svg class="size-4">
-        <use href="/ui.svg#source" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+        <use href="/logos/ui.svg#source" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
       </svg>
-      <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
-        See Source Code
+      <span class="text-current text-sm group-hover:text-black group-hover:dark:text-white blend">
+        Source Code
       </span>
     </a>
   </div> 
@@ -87,12 +87,12 @@ const originalLink = collection === "posts" ? data.originalLink : null
 
   {originalLink && 
   <div class="mt-4 flex flex-wrap gap-2">
-    <a href={originalLink} target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
+    <a href={originalLink} target="_blank" class="group flex gap-1 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend">
       <svg class="size-4">
-        <use href="/ui.svg#original" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
+        <use href="/logos/ui.svg#original" class="fill-current group-hover:fill-black group-hover:dark:fill-white blend"/>
       </svg>
-      <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
-        See Original Post
+      <span class="text-current text-sm group-hover:text-black group-hover:dark:text-white blend">
+        Original Post
       </span>
     </a>
   </div> 

@@ -13,13 +13,17 @@ const subpath = pathname.match(/[^/]+/g)
   <Container size="md">
     <div class="relative h-full w-full">
       <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold">
-        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-          <svg class="size-6 fill-current">
-            <use href="/brand.svg#brand"></use>
-          </svg>
-          <div>
-            {SITE.TITLE}
+        <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out items-center">
+          <!-- <svg class="size-6 fill-current">
+            <use href="/logos/logo-white.svg"></use>
+          </svg> -->
+          <img src="/logos/logo-white.svg" class="size-5 fill-current" />
+          <div class="flex flex-col justify-end mt-1">
+            <p class="text-center">{SITE.TITLE}</p>
           </div>
+          <!-- <div class="flex inline-block align-bottom justify-end ">
+            {SITE.TITLE}
+          </div> -->
         </a>
       </div>
 
@@ -38,31 +42,31 @@ const subpath = pathname.match(/[^/]+/g)
     <div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1">
       <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={clsx("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", pathname === "/search" || "/" + subpath?.[0] === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
         <svg class="size-full">
-          <use href="/ui.svg#search"></use>
+          <use href="/logos/ui.svg#search"></use>
         </svg>
       </a>
 
       <a href="/rss.xml" target="_blank" aria-label={`Rss feed for ${SITE.TITLE}`} class={clsx("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg class="size-full">
-          <use href="/ui.svg#rss"></use>
+          <use href="/logos/ui.svg#rss"></use>
         </svg>
       </a>
 
       <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={clsx("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg class="size-full block dark:hidden">
-          <use href="/ui.svg#sun"></use>
+          <use href="/logos/ui.svg#sun"></use>
         </svg>
         <svg class="size-full hidden dark:block">
-          <use href="/ui.svg#moon"></use>
+          <use href="/logos/ui.svg#moon"></use>
         </svg>
       </button>
 
       <button id="header-drawer-button" aria-label={`Toggle drawer open and closed`} class={clsx("flex md:hidden", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
         <svg id="drawer-open" class="size-full">
-          <use href="/ui.svg#menu"></use>
+          <use href="/logos/ui.svg#menu"></use>
         </svg>
         <svg id="drawer-close" class="size-full">
-          <use href="/ui.svg#x"></use>
+          <use href="/logos/ui.svg#x"></use>
         </svg>
       </button>
     </div>

@@ -1,0 +1,25 @@
+---
+title: "Modeling Fluency and Faithfulness for Diverse Neural Machine Translation"
+summary: "A method to introduce an evaluation module to guide the distribution of the prediction to encourage the model to generate the word which has a fluent connection with its past and future translation and meanwhile tends to form a translation equivalent in meaning to the source."
+abstract: "Neural machine translation models usually adopt the teacher forcing strategy for training which requires the predicted sequence matches ground truth word by word and forces the probability of each prediction to approach a 0-1 distribution. However, the strategy casts all the portion of the distribution to the ground truth word and ignores other words in the target vocabulary even when the ground truth word cannot dominate the distribution. To address the problem of teacher forcing, we propose a method to introduce an evaluation module to guide the distribution of the prediction. The evaluation module accesses each prediction from the perspectives of fluency and faithfulness to encourage the model to generate the word which has a fluent connection with its past and future translation and meanwhile tends to form a translation equivalent in meaning to the source. The experiments on multiple translation tasks show that our method can achieve significant improvements over strong baselines."
+authors:
+- Yang Feng
+- Wanying Xie
+- Shuhao Gu
+- Chenze Shao
+- Wen Zhang
+- Zhengxin Yang
+- Dong Yu
+position: "AAAI-20"
+date: "Jun 02 2020"
+tags:
+- Neural Machine Translation
+- Natural Language Processing
+type: "Conference"
+draft: false
+select: false
+arxivLink: "https://arxiv.org/abs/1912.00178"
+officialLink: "https://ojs.aaai.org/index.php/AAAI/article/view/5334"
+---
+
+TLDR: A method to introduce an evaluation module to guide the distribution of the prediction to encourage the model to generate the word which has a fluent connection with its past and future translation and meanwhile tends to form a translation equivalent in meaning to the source.
