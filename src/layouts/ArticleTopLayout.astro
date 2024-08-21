@@ -44,9 +44,39 @@ const originalLink = collection === "posts" ? data.originalLink : null
   <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
     {title}
   </h1>
-  <div class="mt-1">
-    {summary}
+
+  <div class="flex flex-wrap items-center mt-1 mb-0 gap-1">
+    <div class="text-sm font-bold">
+      Authors:
+    </div>
+    <div class="text-sm px-1 py-0.5">
+      {entry.data.authors.join(', ')}
+    </div>
   </div>
+
+  {(entry.collection == 'publications') &&
+    <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+      <div class="text-sm font-bold">
+        Publish @
+      </div>
+      <div class="text-sm py-0.5">
+        {entry.data.position}
+      </div>
+    </div>
+  }
+
+  {(entry.collection == 'publications') &&
+    <div class="mt-1">
+      <div class="text-sm font-bold">Abstract:</div>
+      {entry.data.abstract}
+    </div>
+  }
+  {(entry.collection != 'publications') &&
+    <div class="mt-1">
+      <div class="text-sm font-bold">Summary:</div>
+      {summary}
+    </div>
+  }
   {(arxivLink || officialLink) && 
   <div class="mt-4 flex flex-wrap gap-2">
     {arxivLink && 

@@ -24,6 +24,38 @@ export default function ArrowCard({entry, pill}: Props) {
           {entry.data.title}
         </div>
 
+        <div class="flex flex-wrap items-center mt-1 mb-0 gap-1">
+          <div class="text-sm font-bold">
+            Authors:
+          </div>
+          {(entry.data.authors.length == 1) &&
+            <div class="text-sm px-1 py-0.5">
+              {entry.data.authors[0]}
+            </div>
+          }
+          {(entry.data.authors.length == 2) &&
+            <div class="text-sm px-1 py-0.5">
+              {entry.data.authors[0]} and {entry.data.authors[1]}
+            </div>
+          }
+          {(entry.data.authors.length >= 3) &&
+            <div class="text-sm px-1 py-0.5">
+              {entry.data.authors[0]} et al.
+            </div>
+          }
+        </div>
+
+        {(entry.collection == 'publications') &&
+          <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+            <div class="text-sm font-bold">
+              Publish @
+            </div>
+            <div class="text-sm py-0.5">
+              {entry.data.position}
+            </div>
+          </div>
+        }
+
         <div class="text-sm line-clamp-2">
           {entry.data.summary}
         </div>
