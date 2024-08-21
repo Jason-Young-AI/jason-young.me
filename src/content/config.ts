@@ -50,7 +50,8 @@ const cv = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    date: z.coerce.date(),
+    subtitle: z.string(),
+    order: z.number(),
   }),
 })
 

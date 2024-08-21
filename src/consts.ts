@@ -31,12 +31,6 @@ export const CV: Page = {
   DESCRIPTION: "My Curriculum Vitae.",
 }
 
-// Search Page
-export const SEARCH: Page = {
-  TITLE: "Search",
-  DESCRIPTION: "Search all posts and projects by keyword.",
-}
-
 // Links
 export const LINKS: Links = [
   { 

@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import { CV } from "@consts"
+
+const collection = await getCollection("cv")
+
+collection.sort((a, b) => b.data.order - a.data.order)
+
+const cv = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render()
+    return { ...item, Content }
+  })
+)
+
+---
+
+<PageLayout title={CV.TITLE} description={CV.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {CV.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <ul>
+      { 
+        cv.map((entry) => (
+          <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+            <div class="text-black dark:text-white font-semibold">
+              {entry.data.title}
+            </div>
+            {entry.data.subtitle &&
+              <div class="text-sm font-semibold">
+              {entry.data.subtitle}
+              </div>
+            }
+            <article class="prose dark:prose-invert">
+              <entry.Content />
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </BottomLayout>
+</PageLayout>
