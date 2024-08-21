@@ -1,4 +1,4 @@
-name: Deploy to My Server
+name: Deploy My Site
 on:
   push:
     branches:
