@@ -1,7 +1,8 @@
 ---
 title: "About Me"
-subtitle: "This is Me"
+subtitle: ""
 order: 1
+draft: false
 ---
 
 Hello World!

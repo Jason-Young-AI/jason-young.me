@@ -52,6 +52,7 @@ const cv = defineCollection({
     title: z.string(),
     subtitle: z.string(),
     order: z.number(),
+    draft: z.boolean().optional(),
   }),
 })
 
