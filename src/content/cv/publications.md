@@ -2,7 +2,7 @@
 title: "Publications"
 subtitle: ""
 order: 5
-draft: true
+draft: false
 ---
 
 ## All
