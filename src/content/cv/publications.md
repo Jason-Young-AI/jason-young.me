@@ -35,3 +35,7 @@ draft: false
 - **Enhancing Context Modeling with a Query-Guided Capsule Network for Document-level Translation**.
 <span style="color:gray"><b>Zhengxin Yang</b>, Jinchao Zhang, Fandong Meng, Shuhao Gu, Yang Feng, Jie Zhou.</span>
 *EMNLP 2019*
+
+- **Uyghur-to-Chinese neural machine translation based on incremental training**.
+<span style="color:gray"><b>Zhengxin Yang</b>, Jingyu Li, Jiawei Hu, Yang Feng.</span>
+*JXMU 2019*
