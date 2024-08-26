@@ -2,7 +2,7 @@
 title: "Awards"
 subtitle: ""
 order: 3
-draft: true
+draft: false
 ---
 
 - **Winner** of *CWMT 2018 Uyghur-to-Chinese News Machine Translation Evaluation*. Nov 2018. (Ranked 1st out of 8, 1/8).
