@@ -20,7 +20,7 @@ tags:
 - AIGNNA
 type: "arXiv"
 draft: false
-select: false
+select: true
 arxivLink: "https://arxiv.org/abs/2406.15132"
 officialLink: ""
 ---
