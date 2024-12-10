@@ -1,0 +1,39 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import { Hidden } from "@consts"
+
+import StackCard from "@components/StackCard.astro"
+
+const tools = [
+  { 
+    text: "EtherPad-Lite", 
+    href: "/hidden/etherpad" 
+  },
+]
+
+---
+
+<PageLayout title={Hidden.TITLE} description={Hidden.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {Hidden.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <p class="font-normal text-black dark:text-white">
+      Here is My Hidden Personal Space ...
+      I Keep Various Tools I Use in My Daily Life.
+    </p>
+    <div class="flex flex-wrap items-center gap-2 mt-5">
+      {tools.map(item => (
+        <StackCard 
+          text={item.text}
+          href={item.href}
+        />
+      ))}
+    </div>
+
+  </BottomLayout>
+</PageLayout>

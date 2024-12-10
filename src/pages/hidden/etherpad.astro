@@ -1,0 +1,17 @@
+---
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+
+---
+
+<PageLayout title={'Jason\'s EtherPad'} description={'Jason\'s EtherPad For Research.'}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {'Jason\'s EtherPad'}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <iframe src="/hidden/etherpad" width="100%" height="800px" allowfullscreen></iframe>
+  </BottomLayout>
+</PageLayout>

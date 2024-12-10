@@ -31,6 +31,12 @@ export const CV: Page = {
   DESCRIPTION: "My Curriculum Vitae.",
 }
 
+// Hidden Page
+export const Hidden: Page = {
+  TITLE: "Hidden Space",
+  DESCRIPTION: "My Personal Space.",
+}
+
 // Links
 export const LINKS: Links = [
   { 

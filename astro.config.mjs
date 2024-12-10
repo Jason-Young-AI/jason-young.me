@@ -9,4 +9,15 @@ import tailwind from "@astrojs/tailwind"
 export default defineConfig({
   site: "https://jason-young.me",
   integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
+  vite: {
+    server: {
+      proxy: {
+        '/hidden/etherpad': {
+          target: 'http://127.0.0.1:9001',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/private\/etherpad/, ''),
+        },
+      },
+    },
+  },
 })
