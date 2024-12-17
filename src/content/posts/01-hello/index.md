@@ -8,7 +8,7 @@ tags:
 - Daily Post
 draft: false
 select: true
-originalLink: "123"
+originalLink: ""
 ---
 
 Hello World!
