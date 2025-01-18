@@ -3,7 +3,7 @@ import type { Site, Page, Links, Socials } from "@types"
 // Global
 export const SITE: Site = {
   TITLE: "Jason Young",
-  DESCRIPTION: "Welcome! It is Jason's Personal Website.",
+  DESCRIPTION: "Welcome! It is Jason's Personal Website. My Chinese name is 杨郑鑫, and its Pinyin Romanization is Zhengxin Yang.",
   AUTHOR: "Jason Young",
 }
 
