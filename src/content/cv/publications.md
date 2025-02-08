@@ -5,7 +5,7 @@ order: 5
 draft: false
 ---
 
-<span style="color:mediumpurple"><b>Currently Studies</b></span>
+<span style="color:mediumpurple"><b>Recent Research</b></span>
 
 - **Evaluatology: The Science and Engineering of Evaluation**.
 <span style="color:gray">Jianfeng Zhan, Lei Wang, Wanling Gao, Hongxiao Li, Chenxi Wang, Yunyou Huang, Yatao Li, <b>Zhengxin Yang</b>, Guoxin Kang, Chunjie Luo, Hainan Ye, Shaopeng Dai, Zhifei Zhang.</span>
@@ -23,7 +23,7 @@ draft: false
 <span style="color:gray">Zhang Zhifei, <b>Zhengxin Yang</b>, Huang Yunyou, Z. Jianfeng.</span>
 *XHYXZZ 2021*
 
-<span style="color:mediumpurple"><b>Early Studies</b></span>
+<span style="color:mediumpurple"><b>Early Research</b></span>
 - **Guiding Teacher Forcing with Seer Forcing for Neural Machine Translation**.
 <span style="color:gray">Yang Feng, Shuhao Gu, Dengji Guo, <b>Zhengxin Yang</b>, Chenze Shao.</span>
 *ACL 2021*
