@@ -1,5 +1,5 @@
 import type { PublicationEntry, ProjectEntry, PostEntry } from "@/types/content"
-import { formatDate } from "@lib/utils"
+import { formatDate } from "@/lib/utils"
 
 type Props = {
   entry: PublicationEntry | ProjectEntry | PostEntry

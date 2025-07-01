@@ -1,11 +1,12 @@
 ---
+import type { PublicationEntry, ProjectEntry, PostEntry } from "@/types/content"
 import { getCollection } from "astro:content"
-import { SITE, SOCIALS } from "@consts"
+import { SITE, SOCIALS } from "@/consts"
 
-import PageLayout from "@layouts/PageLayout.astro"
-import ArrowCard from "@components/ArrowCard"
-import TwinklingStars from "@components/TwinklingStars.astro"
-import MeteorShower from "@components/MeteorShower.astro"
+import PageLayout from "@/layouts/PageLayout.astro"
+import ArrowCard from "@/components/ArrowCard"
+import TwinklingStars from "@/components/TwinklingStars.astro"
+import MeteorShower from "@/components/MeteorShower.astro"
 
 
 const publications = (await getCollection("publications"))
@@ -13,18 +14,42 @@ const publications = (await getCollection("publications"))
   .filter(publication => !publication.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0,3)
+  .map<PublicationEntry>(p => ({
+    slug: p.slug,
+    collection: "publications",
+    data: {
+      ...p.data,
+      date: p.data.date.toISOString(),
+    },
+  }));
 
 const projects = (await getCollection("projects"))
   .filter(project => project.data.select)
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0,3)
+  .map<ProjectEntry>(p => ({
+    slug: p.slug,
+    collection: "projects",
+    data: {
+      ...p.data,
+      date: p.data.date.toISOString(),
+    },
+  }));
 
 const posts = (await getCollection("posts"))
   .filter(post => post.data.select)
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0,3)
+  .map<PostEntry>(p => ({
+    slug: p.slug,
+    collection: "posts",
+    data: {
+      ...p.data,
+      date: p.data.date.toISOString(),
+    },
+  }));
 
 ---
 

@@ -1,11 +1,11 @@
 ---
 import { getCollection } from "astro:content"
-import { POSTS } from "@consts"
-import PageLayout from "@layouts/PageLayout.astro"
-import TopLayout from "@layouts/TopLayout.astro"
-import BottomLayout from "@layouts/BottomLayout.astro"
+import { POSTS } from "@/consts"
+import PageLayout from "@/layouts/PageLayout.astro"
+import TopLayout from "@/layouts/TopLayout.astro"
+import BottomLayout from "@/layouts/BottomLayout.astro"
 
-import Posts from "@components/Posts"
+import Posts from "@/components/Posts"
 
 
 const posts = (await getCollection("posts"))

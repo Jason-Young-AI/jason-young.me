@@ -3,7 +3,7 @@ import type { PublicationEntry } from "@/types/content";
 import { createEffect, createSignal, For } from "solid-js"
 import { clsx } from "clsx"
 
-import ArrowCard from "@components/ArrowCard"
+import ArrowCard from "@/components/ArrowCard"
 
 
 type Props = {
