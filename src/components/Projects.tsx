@@ -69,7 +69,7 @@ export default function Projects({ data, tags }: Props) {
           </ul>
           {projects().length === 0 && (
             <div class="text-sm italic text-gray-500 mt-4">
-              No publications match your selected tags.
+              No projects match your selected tags.
             </div>
           )}
         </div>

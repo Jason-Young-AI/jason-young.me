@@ -70,7 +70,7 @@ export default function Posts({ data, tags }: Props) {
           </ul>
           {posts().length === 0 && (
             <div class="text-sm italic text-gray-500 mt-4">
-              No publications match your selected tags.
+              No posts match your selected tags.
             </div>
           )}
         </div>
