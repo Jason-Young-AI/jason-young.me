@@ -1,4 +1,4 @@
-import type { CollectionEntry } from "astro:content"
+import type { PublicationEntry } from "@/types/content";
 
 import { createEffect, createSignal, For } from "solid-js"
 import { clsx } from "clsx"
@@ -7,13 +7,33 @@ import ArrowCard from "@components/ArrowCard"
 
 
 type Props = {
-  data: CollectionEntry<"publications">[]
+  data: PublicationEntry[]
   tags: string[]
 }
 
-export default function Projects({ data, tags }: Props) {
+export default function Publications({ data, tags }: Props) {
   const [filter, setFilter] = createSignal(new Set<string>())
-  const [publications, setPublications] = createSignal<CollectionEntry<"publications">[]>([])
+  const [publications, setPublications] = createSignal<PublicationEntry[]>([])
+
+  // createEffect(() => {
+  //   console.log("filter changed:", Array.from(filter()));
+  //   const activeTags = Array.from(filter());
+
+  //   if (activeTags.length === 0) {
+  //     setPublications(data);
+  //     return;
+  //   }
+
+  //   const filtered = data.filter((entry) =>
+  //     activeTags.every((tag) =>
+  //       entry.data.tags.some((entryTag) =>
+  //         entryTag.toLowerCase() === tag.toLowerCase()
+  //       )
+  //     )
+  //   );
+
+  //   setPublications(filtered);
+  // });
 
   createEffect(() => {
     setPublications(data.filter((entry) => 
@@ -33,6 +53,19 @@ export default function Projects({ data, tags }: Props) {
       )
     )
   }
+
+  // function toggleTag(tag: string) {
+  //   const current = new Set(filter());
+  //   if (current.has(tag)) {
+  //     current.delete(tag);
+  //   } else {
+  //     current.add(tag);
+  //   }
+  //   setFilter(current);
+  //   console.log("Toggled tag:", tag);
+  //   console.log("New filter set:", Array.from(current));
+
+  // }
 
   return (
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -68,6 +101,11 @@ export default function Projects({ data, tags }: Props) {
               </li>
             ))}
           </ul>
+          {publications().length === 0 && (
+            <div class="text-sm italic text-gray-500 mt-4">
+              No publications match your selected tags.
+            </div>
+          )}
         </div>
       </div>
     </div>

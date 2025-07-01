@@ -1,4 +1,4 @@
-import { type CollectionEntry } from "astro:content"
+import type { ProjectEntry } from "@/types/content"
 
 import { createEffect, createSignal, For } from "solid-js"
 import { clsx } from "clsx"
@@ -6,13 +6,13 @@ import { clsx } from "clsx"
 import ArrowCard from "@components/ArrowCard"
 
 type Props = {
-  data: CollectionEntry<"projects">[]
+  data: ProjectEntry[]
   tags: string[]
 }
 
 export default function Projects({ data, tags }: Props) {
   const [filter, setFilter] = createSignal(new Set<string>())
-  const [projects, setProjects] = createSignal<CollectionEntry<"projects">[]>([])
+  const [projects, setProjects] = createSignal<ProjectEntry[]>([])
 
   createEffect(() => {
     setProjects(data.filter((entry) => 
@@ -67,6 +67,11 @@ export default function Projects({ data, tags }: Props) {
               </li>
             ))}
           </ul>
+          {projects().length === 0 && (
+            <div class="text-sm italic text-gray-500 mt-4">
+              No publications match your selected tags.
+            </div>
+          )}
         </div>
       </div>
     </div>

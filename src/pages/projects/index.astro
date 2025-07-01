@@ -12,6 +12,14 @@ import Projects from "@components/Projects"
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .map(p => ({
+    slug: p.slug,
+    collection: p.collection,
+    data: {
+      ...p.data,
+      date: p.data.date.toISOString(),
+    },
+  }));
 
 const tags = [...new Set(projects.flatMap(project => project.data.tags))]
   .sort((a, b) => a.localeCompare(b))

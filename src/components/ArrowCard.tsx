@@ -1,8 +1,8 @@
-import { type CollectionEntry } from "astro:content"
+import type { PublicationEntry, ProjectEntry, PostEntry } from "@/types/content"
 import { formatDate } from "@lib/utils"
 
 type Props = {
-  entry: CollectionEntry<"publications"> | CollectionEntry<"projects"> | CollectionEntry<"posts">
+  entry: PublicationEntry | ProjectEntry | PostEntry
   pill?: boolean
 }
 
@@ -17,7 +17,7 @@ export default function ArrowCard({entry, pill}: Props) {
             </div>
           }
           <div class="text-sm uppercase">
-            {formatDate(entry.data.date)}
+            {formatDate(new Date(entry.data.date))}
           </div>
         </div>
         <div class="font-semibold mt-3 text-black dark:text-white">
