@@ -1,0 +1,193 @@
+---
+title: "Artificial Intelligence Designed Artificial Intelligence"
+summary: "AIDAI (Artificial Intelligence Designed Artificial Intelligence) transcends human-centered paradigms by empowering AI as a fully self-designing and self-evolving system, with human researchers and the external world serving only as guides and regulators, thereby establishing a powerful framework for the next generation of intelligent systems."
+abstract: "Artificial intelligence is rapidly evolving into systems of immense scale, structural complexity, and limited interpretability. Traditional human-centered design paradigms are approaching their capacity limits, struggling to support further breakthrough innovation. This bottleneck reveals long-standing structural tensions within the prevailing AI design paradigm. In response, this paper introduces Artificial Intelligence Designed Artificial Intelligence (AIDAI) as a novel research paradigm that reconceptualizes AI systems as active design entities capable of autonomously generating, activating, optimizing, evaluating, and explaining their own structures. AIDAI itself constitutes a self-contained research system, where AI is no longer a passive executor but a self-evolving agent that continuously adapts its own structure and function based on externally defined goals and preferences, achieving dynamic alignment with changing environmental demands. Within this paradigm, the role of human researchers shifts from system builders to strategic guides and evolutionary supervisors. AIDAI not only offers a potential pathway to addressing deep methodological limitations in current design practices but also points toward a future of artificial intelligence that is more general, autonomous, and sustainable. This paper calls on the AI research community to jointly explore this direction and advance toward building the next generation of AI systems with open-ended evolutionary potential."
+authors:
+- Zhengxin Yang
+position: "Preprint"
+date: "Sep 06 2025"
+tags:
+- AIDAI
+- Artificial Intelligence
+type: "Preprint"
+draft: false
+select: true
+# arxivLink: "./aidai.pdf"
+---
+
+import { Image } from 'astro:assets';
+import aidai_vis from './aidai-vis.svg';
+
+## Contents
+
+## Why Humanity Needs AIDAI
+A persistent structural tension has repeatedly surfaced throughout the development of artificial intelligence (AI): each time the field experiences a breakthrough, such as the introduction of novel network architectures or generalized system paradigms, it is often followed by a phase in which the space for genuine innovation narrows, as research activity shifts toward extending, interpreting, and applying what has already been achieved, while truly original designs that might open up the next phase of AI evolution remain comparatively scarce.
+
+This structural tension has become especially pronounced in the current era dominated by large-scale neural models. As AI systems continue to scale across model parameters, training data, and computational demands, their behavioral complexity rises significantly, giving rise to phenomena such as emergent capabilities, behavior drift, hallucination, and catastrophic forgetting, complex behaviors that increasingly resist systematic explanation within existing theoretical frameworks. Although substantial effort has been devoted to benchmarking and mechanistic analysis, exploration aimed at structural breakthroughs and methodological transformation remains notably limited. At the root of this stagnation lies a deeper constraint: the design demands of contemporary AI systems are increasingly surpassing the cognitive and creative capacities of human developers. Traditional human-centered approaches are approaching their limits, raising concerns about their adequacy for sustaining the next stage of AI development.
+
+The development of artificial intelligence has long embodied the logic of the ``Extended Mind Theory''[[1](#ref_1)] Through the use of external scaffolding -- such as algorithmic models, large-scale datasets, and computational infrastructure -- humans have constructed AI systems. These systems, as the products of cognitive extension, have in turn been re-externalized as tools for further extending human problem-solving and design capabilities, applied not only to high-level cognitive domains such as language understanding and decision-making, which had long been seen as hallmarks of human intelligence, but also to labor-intensive processes like large-scale image classification, where AI has proven effective in reducing human cognitive and operational burdens.
+
+<figure style="text-align: center;">
+<a id="fig_1"></a>
+<Image src={aidai_vis} alt="Visualization of the formalized AIDAI paradigm." loading="lazy" width="128" />
+<figcaption>Figure 1. Visualization of the formalized AIDAI paradigm.</figcaption>
+</figure>
+
+However, this paradigm has consistently presumed a human-dominant role in system construction: AI remains an externalized instrument of cognition, rather than an autonomous participant in the design process. As the task of building more capable AI systems becomes increasingly complex, the cognitive and creative demands involved have begun to exceed what human designers can effectively manage. In The Sciences of the Artificial, Herbert Simon emphasized that the design of complex artificial systems cannot rely on rational deduction alone, but must instead incorporate feedback structures and adaptive processes[[2](#ref_2)]. Today, this insight is no longer a theoretical observation but an empirical constraint: traditional human-centered design approaches are struggling to cope with the scale, intricacy, and emergent behavior of contemporary AI systems. This growing tension points to the need for a new methodological foundation, one that reconsiders not only how AI is used, but how it is conceived and constructed.
+
+## Toward AIDAI Paradigm
+In response to this escalating structural challenge, this paper introduces a new research paradigm: Artificial Intelligence Designed Artificial Intelligence (AIDAI). Unlike conventional paradigms that treat AI systems as tools for extending human cognition, AIDAI repositions AI as an autonomous designer of future intelligence. AIDAI systems are self-contained and capable of generating components, activating tasks, optimizing performance, evaluating behaviors, and interpreting internal mechanisms. These five phases, generation, activation, optimization, evaluation, and interpretation, form a closed-loop design process through which each component reinforces and refines the others.
+
+Crucially, the evaluation and interpretation phases function not only as mechanisms to monitor and calibrate internal operations, but also as interfaces for incorporating external feedback, aligning AI system development with shifting goals, dynamic environments, and human guidance and strategic intent. This dual-loop architecture enables continuous adaptation of internal structures and behaviors, while preserving a channel for human oversight without reverting to anthropocentric control.
+
+AIDAI thus marks a fundamental reorientation of design logic: from human-designed AI systems, to AI systems capable of designing themselves through continuous alignment with internal dynamics and external conditions.
+
+Under the AIDAI paradigm, the role of humans undergoes a fundamental redefinition. Rather than acting as direct constructors or operators of intelligent systems, humans serve as strategic directors and boundary setters, ensuring that AI development proceeds in alignment with intended objectives. This reallocation of roles not only accommodates the growing complexity of AI design but also introduces new capacities for innovation by embedding dynamic feedback and goal-oriented adjustment.
+
+By embedding mechanisms for internal adaptation and preserving interfaces for external guidance, AIDAI enables development to proceed autonomously, yet remain aligned with shifting goals, dynamic environments, and human intent. These interfaces empower humans to shape the trajectory of AIDAI, both by catalyzing its advancement and by steering it toward intended directions, without intervening in its internal design process. This architectural shift decouples strategic specification from autonomous implementation, enabling humans to guide AI development through principled oversight rather than prescriptive control.
+
+AIDAI is introduced in response to the deep structural challenges confronting contemporary AI design paradigms, aiming to guide the field toward a systemic trajectory that transcends the dominance of human-centered rationality. It provides a new foundation for reimagining the nature and future of intelligence. This paradigm calls for broad engagement to rethink the foundations of how we build and direct artificial intelligence.
+
+## Formalizing the AIDAI Paradigm
+### Overview: Conditional Autopoiesis
+The core principle of the Artificial Intelligence Designed Artificial Intelligence paradigm can be distilled into the notion of **Conditional Autopoiesis**. Here, **Autopoiesis**[^1] denotes the capability of a system to self-generate, self-activate, and self-optimize its own structures by producing its components, preserving their coherence, and continually refining their functional organization. **Conditional** signifies that such autopoiesis operates under explicit constraints, with its survival asymmetrically dependent on the human sphere, and is operationalized through a mandatory bidirectional channel of interaction with the external world for evaluation and explanation, inseparably coupled with the enforcement of both endogenous and exogenous boundaries.
+
+In this formulation, AI is conceived as a system neither wholly human-centered nor entirely self-directed, but as an intelligence that survives under a regime of coupled constraints while evolving within a framework of autonomous design.
+Three structural traits underpin this conception:
+
+1. **Autopoietic**. The AI can self-generate, self-activate, and self-optimize without human design intervention.
+2. **Conditional**. The AI operates within a coupled framework of endogenous and exogenous boundaries that regulate its survival trajectories.
+3. **Tethered**. The Autopoietic and Conditional traits are mandatorily linked to an interaction interface that connects the AI with external intelligences, ensuring outward transparency and inward influence for evaluation and explanation; the loss of this tether to an interaction interface naturally terminates the AI's life.
+
+The following formalizes these traits into the axiomatic framework of Conditional Autopoiesis. Figure [1](#fig_1) illustrates the relationships among its constituent components, including the GAO–EX module, the internal–external dual loops, and the channels enabling interaction. 
+
+#### Axiomatic Foundation
+The Conditional Autopoiesis of AIDAI can be formalized through one overarching axiom and three foundational axioms that instantiate and structure its constitutive dimensions.
+These axioms are stated at the paradigm level: they are agnostic to the mechanisms of implementation, yet they constitute necessary conditions that must hold for any valid instantiation of the AIDAI paradigm.
+
+
+**Overarching Axiom (Conditional Autopoiesis).** *An AIDAI instance must function as an autopoietic system whose capacity for self-generation, self-activation, and self-optimization is inseparably conditioned by explicit constraints. Its survival must be asymmetrically dependent on sustained interaction with the human sphere, mediated through bidirectional channels for evaluation and explanation that enforce coupled endogenous and exogenous boundaries.*
+
+**Note**: While foundational to the AIDAI paradigm, this overarching axiom may require refinement as the paradigm matures. Given the inherent limits of human cognition, no claim of completeness can be made, and the axiom should be treated as an evolving boundary condition rather than a final, immutable law.
+
+Building on the overarching axiom, the following three foundational axioms articulate the constitutive dimensions of Conditional Autopoiesis.
+They operate at the paradigm level, abstracting away from specific implementation details, yet establishing the necessary structural conditions for any valid instantiation of the AIDAI paradigm.
+
+**Foundational Axiom 1 (Minimal Autopoietic Competence).** *An AIDAI instance must possess a minimal sufficient set of self-design capabilities -- generation, activation, optimization -- constituting its autopoietic core, and must be sustain this core exclusively under the constraint structure prescribed by the overarching axiom.*
+
+**Foundational Axiom 2 (Dual-Boundary Coupling).** *An AIDAI instance must operate under a coupled framework of endogenous and exogenous boundaries, each irreducible and jointly determining its viable trajectories, with their enforcement inseparably embedded into the AIDAI's operational logic.*
+
+**Foundational Axiom 3 (Existence-Critical Interaction).** *An AIDAI instance must maintain a mandatory bidirectional interaction interface linking its autopoietic core to external intelligences, ensuring outward transparency and inward influence for evaluation and explanation; the loss of this tether must result in the natural termination of the AIDAI's autopoietic process.*
+
+The three foundational axioms elaborate on the overarching axiom. Failure to satisfy any foundational axiom renders the overarching axiom non-viable. Section [Modules: GAO-EX](#modules-gao-ex), [Constraints: Endogenous and Exogenous Boundaries](#constraints-endogenous-and-exogenous-boundaries) and [Loops: Internal and External Dynamics](#loops-internal-and-external-dynamics) present the architectural elements -- Modules, Constraints, and Loops -- that collectively realize these axioms. These elements are not in strict one-to-one correspondence with the axioms; a single element may embody multiple axioms simultaneously. The realization described here is both consistent with the axioms and coherent as an integrated design.
+
+### Modules: GAO-EX
+Building on the three foundational axioms, the capabilities required for any AIDAI instance can be minimally and sufficiently decomposed into five core modules -- Generation, Activation, Optimization, Evaluation, and Explanation -- collectively referred to as GAO-EX.
+Modules does not function in isolation: its modules are tightly coupled through the two architectural mechanisms described in Sections [GAO Modules](#gao-modules) and [EX Modules](#ex-modules). This configuration reflects the current minimal-sufficiency design based on the current understanding of axioms. Future improvements of the constituents of AIDAI may be possible, provided that any resulting instance continues to satisfy all three foundational axioms.
+This modular decomposition collectively operationalizes Axioms 1, 2, and 3, providing the capability foundation upon which constraints (Axiom 2) and loops (Axiom 3) are enforced.
+
+
+
+#### GAO Modules
+
+**G Module (AI Generating AI, AIGAI)** The AIGAI module is responsible for generating any constituent components and organizational structures necessary for constructing AI itself. Specifically, AIGAI focuses on producing higher-level forms of AI rather than their concrete implementation details -- responsibilities that instead fall under the AIAAI module. This separation enables AI generation to be decoupled from the specifics of its eventual deployment, improving design efficiency and reducing unnecessary attention to redundant implementation details.
+
+Ideally, such design should proceed under a unified high-level representation. For example, in the case of neural networks, the same architecture may be implemented under different deep learning frameworks such as PyTorch or TensorFlow, represented and stored in distinct formats such as ONNX, and compiled into different intermediate representations such as TVM. Without a unified high-level representation, these variations can produce widely divergent performance outcomes, with no easy way to trace the root causes.
+
+Consequently, potential research directions within this framework include Neural Network Intermediate Representation (NNIR) for unified neural network representation, and **Neural Structure Understanding (NSU)** and **Neural Structure Generation (NSG)** under NNIR.
+
+Importantly, AIGAI's notion of ``generation'' should extend beyond the core AI components (e.g., neural networks—or potentially superior representational forms that may emerge with future research) to encompass data generation, and even the generation of the essence of data itself. Here, data is understood as arising from, or being observed through, the interactions between intelligence and the world; **uncovering the origins of data becomes a key aspect in understanding and designing higher-level AI systems**.
+
+Moreover, the AIGAI module must operate under the constraints of endogenous boundaries (corresponding to Axiom 2, see Section [Endogenous Boundaries](#endogenous-boundaries)), thereby preventing the emergence of designs that are anti-world or misaligned with human values, at the root level. For these reasons, AIGAI constitutes the creative foundation of AIDAI.
+
+**A Module (AI Activating AI, AIAAI)** The AIAAI module is responsible for orchestrating, deploying, and activating the higher-level designs generated by AIGAI. It transforms the abstract architectural specifications into concrete, lower-level implementations capable of achieving optimal performance under real-world tasks and environmental constraints. While AIGAI determines the higher-level design logic and theoretical performance boundaries, AIAAI determines the actual performance achievable within those boundaries by grounding the design in executable form.
+
+Under this separation, AIGAI outputs higher-level structures that safeguard logical coherence and performance ceilings, whereas AIAAI specializes in instantiating these designs under practical requirements. It translates diverse objectives and constraints into formalized specifications or executable instructions that can be deployed and operated in real environments.
+
+These objectives and constraints may be endogenous, arising from the intrinsic protective rules established by endogenous boundaries, or exogenous, imposed through external boundaries such as human directives or environmental demands. This aligns with Axiom 2 (see Section [Exogenous Boundaries](#exogenous-boundaries)), ensuring that activation remains goal- and constraint-driven under conditional control rather than arbitrary execution.
+
+**O Module (AI Optimizing AI, AIOAI)** The AIOAI module focuses on refining both the lower-level implementations produced by AIAAI and the higher-level designs generated by AIGAI, with the dual aim of improving existing architectures and enabling potential innovations. Because AIGAI and AIAAI explicitly define the design hierarchy, higher-level generation versus lower-level activation, AIOAI can identify the target scope of optimization and trace the source of performance gaps, determining whether improvements should be directed toward the higher-level design layer or the lower-level implementation layer.
+
+By delivering targeted optimization feedback to both AIGAI and AIAAI, AIOAI closes the GAO internal cycle (see Section [Loops: Internal and External Dynamics](#loops-internal-and-external-dynamics)), thereby preserving the autopoietic nature of AIDAI. This feedback loop ensures that advancements are systematically integrated back into the design–activation process, maintaining coherence across the entire GAO module set.
+
+
+#### EX Modules
+While optimization can ensure advancement, the direction of such advancement must remain aligned with human values and subject to enforceable oversight. Without this alignment, the GAO cycle risks drifting toward unsafe or undesirable trajectories. To safeguard against such divergence, AIDAI incorporates the EX modules which contains AIEAI and AIXAI modules for evaluation and explanation, respectively.
+
+**E Module (AI Evaluating AI, AIEAI)** AIEAI employs AI to evaluate the closed-loop design process formed by the GAO modules. This evaluation adheres to the five foundational axioms of evaluatology[[4](#ref_4)], ensuring both scientific rigor and responsiveness to stakeholder needs, where stakeholders include both AIDAI itself and human supervisors or guides. Evaluation designs must explicitly expose AIDAI's objectives and structural logic, while providing the representational structures and interfaces necessary for assessment. These capabilities grant the exogenous boundaries (see Section [Constraints: Endogenous and Exogenous Boundaries](#constraints-endogenous-and-exogenous-boundaries)) structured access into the AIDAI instances, enabling external supervision and coordinated control.
+
+Through this mechanism, AIEAI supports systematic evaluation, alignment, and constraint enforcement by both internal and external intelligences. It is not a peripheral capability, but a core enabler of autopoiesis with transparency. In addition to enabling internal oversight, AIEAI serves as a primary ingress point for external boundaries, translating regulatory, ethical, or safety directives aligned with human values into operational constraints directly influencing the GAO process.
+
+**X Module (AI Explaining AI, AIXAI)** AIXAI complements AIEAI by ensuring that the GAO design process is intelligible to both the system itself and external observers. Its function is to provide faithful explanations of AIDAI’s structures and behaviors, thereby fostering trust and mutual understanding between AIDAI and its stakeholders.
+
+At its core, AIXAI enables the system to capture and articulate why it is the way it is, embedding the capacity for semantic introspection. This requires internal mechanisms that faithfully encode the system’s own design logic, offering a causal transparency chain across the full lifecycle of AI design. Through its introspective interface, AIXAI reveals the operational rationale, implementation mechanisms, and constraint principles underpinning the system’s decisions.
+
+Beyond self-explanation, AIXAI acts as the disclosure interface for AIDAI’s internal behaviors and boundaries, allowing external observers to verify whether the system’s core design principles remain aligned with human values. In this way, AIXAI is both an intrinsic safeguard against errant internal reasoning and a conduit for external trust and validation.
+
+### Constraints: Endogenous and Exogenous Boundaries
+Beyond the GAO-EX modules themselves, constraints are governed by two inseparable boundary types -- endogenous and exogenous -- that together define the permissible operational scope of AIDAI. These boundaries are forcibly coupled, ensuring that modules operate in coexistence with control and that their advancement is never decoupled from external oversight. This structural arrangement directly implements Axiom 2, ensuring that AIDAI’s capacity for autonomous design is permanently bounded by well-specified safety and alignment constraints.
+
+#### Endogenous Boundaries
+Endogenous boundaries are embedded into the high-level design logic of AIDAI from inception, acting as immutable locks that no internal activities can override. It contains three traits:
+
+**Intrinsic permanence** These boundaries define non-negotiable rules that remain invariant across all possible evolutionary trajectories, regardless of future adaptations or optimizations.
+
+**Enforced propagation** They are hard-wired into every GAO-EX module, ensuring that any derivative or descendant modules automatically inherit the same immutable constraints.
+
+**Well-defined constraints** Initially established by human designers and refined through ongoing oversight, these boundaries must be explicitly specified, enforceable, and aligned with human survival and societal values, permanently bounding system advancement within pre-approved limits. While immutable in their core protective logic, they remain open to controlled updates that strengthen safety and alignment, ensuring that no evolution of AIDAI can result in objectives or behaviors that are anti-human or anti-world.
+
+#### Exogenous Boundaries
+Exogenous boundaries originate outside the AIDAI system, imposed by humans, institutions, or societal governance frameworks. They operate as adaptable control layers, enforced through interaction channels. This arrangement ensures that AIDAI’s development remains aligned with external authority and collective values. In contrast to the inherent permanence of endogenous boundaries, exogenous boundaries are defined by their ongoing capacity for human intervention and adjustment, forming a complementary safeguard layer.
+
+**Dynamic adaptability** Unlike the intrinsic permanence of endogenous boundaries, exogenous boundaries are intentionally designed to be flexible and adaptable. They can be revised or expanded in response to changes in societal norms, legal frameworks, or ethical guidelines.
+
+**Interface enforcement** Exogenous boundaries are transmitted and enacted through the bidirectional channels provided by EX (detailed in Section [EX Modules](#ex-modules)), ensuring that updates, overrides, or emergency interventions from external intelligence -- especially human supervisors -- are reliably applied to the system.
+
+**Contextual specificity** Exogenous boundaries are situationally targeted. They can impose temporary restrictions, activate special oversight modes, or fine-tune permissible behaviors to address emergent risks or specific requirements.
+
+### Loops: Internal and External Dynamics
+
+The operational life of AIDAI unfolds through two interdependent feedback loops: an internal loop that drives autopoiesis by cycling through the GAO modules, and an external loop that bridges this internal cycle to external intelligence.This dual-loop architecture embodies Axiom 3, enforcing conditional autopoiesis by making the continuation of internal self-design contingent upon sustained and meaningful interaction with external intelligences. The external loop not only ensures conditional survival dependence through guided interaction, but also channels critical external inputs -- including but not limited to oversight, constraints, and resources -- into the internal loop, completing the architecture of Conditional Autopoiesis.
+
+
+#### Internal Loop (GAO)
+Internal loop is a directed cycle linking GAO recursively, embodying the self-sustaining aspect of the autopoietic nature of AIDAI. It enables the system to advance its own designs without requiring external input — a property that also carries the risk of divergence from intended purposes if left unmoderated. Consequently, the trajectory of the internal loop could advance in directions misaligned with human values or operational goals, necessitating coupling with the external loop.
+
+#### External Loop (EX)
+The external loop connects the self-contained GAO process to external intelligence through the EX interaction interface, forming a bidirectional feedback pathway. This loop ensures that the internal design dynamics of AIDAI remain informed by, and responsive to, the broader intelligent ecosystem.
+
+**Input pathway** Information from the outside world, such as constraints, objectives, and environmental changes, is ingested through EX and delivered into the GAO process, guiding and moderating its internal operations.
+
+**Output pathway** High-level design decisions, operational logic, and optimization outcomes from the GAO loop are transmitted back to external stakeholders, ensuring that the system’s progression is observable and interpretable.
+
+The EX interface is realized through the Evaluation (AIEAI) and Explanation (AIXAI) modules. AIEAI serves as a supervisory entry point, allowing human evaluators to inject constraints, guidance, and corrective feedback. AIXAI acts as a transparency outlet, translating the internal state of AIDAI into intelligible information for observers. 
+Crucially, the GAO loop remains active only while the EX loop is operational. If the EX interface becomes inactive, the internal loop is halted, enforcing the conditional nature of AIDAI’s autopoiesis. This dependency ensures that advancement occurs only through active, meaningful interaction with the broader intelligent ecosystem, including human oversight.
+
+
+## Positioning AIDAI within Existing Paradigms
+Although AIDAI is closely related to prior efforts such as AutoML[[5](#ref_5)], Neural Architecture Search (NAS)[[6](#ref_6),[7](#ref_7)], reinforcement learning (RL)[[8](#ref_8)], AI-generated content (AIGC)[[9](#ref_9),[10](#ref_10)], and even discussions on Artificial General Intelligence (AGI)[[11](#ref_11)], AIDAI represents a higher-order paradigm. It transcends human-centered design logic and advocates for fully autonomous AI self-design. Existing directions may address aspects of automation, evolution, optimization, or fragments of the AIDAI vision, yet they remain fragmented and limited in scope, methodology, and conceptual depth. In contrast, AIDAI establishes a framework oriented toward complete self-design, driven by evaluation and explanation, and guided and constrained by interactions with the external world. Within this paradigm, generation, activation, optimization, explanation, and evaluation are integrated into a unified closed loop. Accordingly, AIDAI not only subsumes and surpasses existing paradigms but also lays a foundational step toward the systematic design of future intelligence.
+
+## References
+[<a id="ref_1">1</a>]. A. Clark and D. Chalmers, “The extended mind,” Analysis, vol. 58, no. 1, pp. 7–19, 1998.
+
+[<a id="ref_2">2</a>]. H. A. Simon, “The sciences of the artificial,” Massachusetts Institute of Technology, 1969.
+
+[<a id="ref_3">3</a>]. H. R. Maturana and F. J. Varela, Autopoiesis and Cognition: The Realization of the Living, vol. 42 of Boston Studies in the Philosophy and History of Science. Springer Netherlands, 1980.
+
+[<a id="ref_4">4</a>]. J. Zhan, L. Wang, W. Gao, H. Li, C. Wang, Y. Huang, Y. Li, Z. Yang, G. Kang, C. Luo, H. Ye, S. Dai, and Z. Zhang, “Evaluatology: The science and engineering of evaluation,” BenchCouncil Transactions on Benchmarks, Standards and Evaluations, vol. 4, no. 1, p. 100162, 2024.
+
+[<a id="ref_5">5</a>]. F. Hutter, L. Kotthoff, and J. Vanschoren, Automated machine learning: methods, systems, challenges. Springer Nature, 2019.
+
+[<a id="ref_6">6</a>]. B. Zoph and Q. Le, “Neural Architecture Search with Reinforcement Learning,” 2017.
+
+[<a id="ref_7">7</a>]. H. Liu, K. Simonyan, and Y. Yang, “DARTS: Differentiable Architecture Search,” 2018.
+
+[<a id="ref_8">8</a>]. R. S. Sutton and A. G. Barto, “Reinforcement Learning: An Introduction,” 2015.
+
+[<a id="ref_9">9</a>]. T. Brown, B. Mann, N. Ryder, M. Subbiah, J. D. Kaplan, P. Dhariwal, A. Neelakantan, P. Shyam, G. Sastry, A. Askell, S. Agarwal, A. Herbert-Voss, G. Krueger, T. Henighan, R. Child, A. Ramesh, D. Ziegler, J. Wu, C. Winter, C. Hesse, M. Chen, E. Sigler, M. Litwin, S. Gray, B. Chess, J. Clark, C. Berner, S. McCandlish, A. Radford, I. Sutskever, and D. Amodei, “Language Models are Few- Shot Learners,” in Advances in Neural Information Processing Systems, vol. 33, pp. 1877–1901, Curran Associates, Inc., 2020.
+
+[<a id="ref_10">10</a>]. A. Ramesh, M. Pavlov, G. Goh, S. Gray, C. Voss, A. Radford, M. Chen, and I. Sutskever, “Zero-Shot Text-to-Image Generation,” in Proceedings of the 38th International Conference on Machine Learning, 2021.
+
+[<a id="ref_11">11</a>]. S. Legg and M. Hutter, “Universal Intelligence: A Definition of Machine Intelligence,” vol. 17, no. 4, pp. 391–444, 2007.
+
+[^1]: First introduced in[[3](#ref_3)], the term denotes a living system’s ability to create and sustain itself by producing its own components.
