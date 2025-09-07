@@ -4,7 +4,7 @@ import type { Site, Page, Links, Socials } from "@/types/types"
 export const SITE: Site = {
   TITLE: "Jason Young",
   DESCRIPTION: "Welcome! This is Jason's personal homepage. My Chinese name is 杨郑鑫, and its Pinyin Romanization is Zhengxin Yang.",
-  AUTHOR: "Jason Young  (杨郑鑫 / Zhengxin Yang)",
+  AUTHOR: "Jason Young  ( 杨郑鑫 / Zhengxin Yang )",
 }
 
 // Publications Page

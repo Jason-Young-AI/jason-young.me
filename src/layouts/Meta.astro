@@ -15,7 +15,7 @@ const canonical = new URL(Astro.url.pathname, site).href
 
 const exact_url = new URL(Astro.url.pathname + Astro.url.search + Astro.url.hash, site).href
 const exact_image = new URL(image, site).href
-const exact_title = home ? `Jason Young (杨郑鑫 / Zhengxin Yang) – ${title}` : title
+const exact_title = home ? `Jason Young ( 杨郑鑫 / Zhengxin Yang ) – ${title}` : title
 const exact_description = description?.match(/Jason Young|杨郑鑫|Zhengxin Yang/i) ? description : `${description} - Jason Young (杨郑鑫 / Zhengxin Yang)`
 
 const exact_person = {
