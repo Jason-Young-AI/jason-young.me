@@ -1,4 +1,4 @@
-import type { Site, Page, Links, Socials } from "@/types/types"
+import type { Site, Page, Links, Socials, FriendLinks } from "@/types/types"
 
 // Global
 export const SITE: Site = {
@@ -75,4 +75,29 @@ export const SOCIALS: Socials = [
     TEXT: "Jason-Young-AI",
     HREF: "https://github.com/Jason-Young-AI"
   },
+]
+
+// Friend Links
+export const FRIEND_LINKS: FriendLinks = [
+  {
+    NAME: "Yangs AI",
+    DESCRIPTION: "Group Website",
+    HREF: "https://yangs.ai",
+    ICON: "/icons/yangs-ai.svg",
+    COLOR: "purple"
+  },
+  {
+    NAME: "Fresh",
+    DESCRIPTION: "Friendly Research Resources Hub",
+    HREF: "https://fresh.research.jason-young.me/",
+    ICON: "/icons/fresh.svg",
+    COLOR: "violet"
+  },
+  {
+    NAME: "BenchCouncil",
+    DESCRIPTION: "International Open Benchmark Council",
+    HREF: "https://www.benchcouncil.org/",
+    ICON: "/icons/benchcouncil.svg",
+    COLOR: "fuchsia"
+  }
 ]
