@@ -18,3 +18,11 @@ export type Socials = {
   TEXT: string
   HREF: string
 }[]
+
+export type FriendLinks = {
+  NAME: string
+  DESCRIPTION: string
+  HREF: string
+  ICON?: string
+  COLOR?: string
+}[]

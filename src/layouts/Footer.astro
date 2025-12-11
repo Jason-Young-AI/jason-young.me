@@ -1,5 +1,5 @@
 ---
-import { SITE, SOCIALS } from "@/consts"
+import { SITE, SOCIALS, FRIEND_LINKS } from "@/consts"
 
 import Container from "@/layouts/Container.astro"
 
@@ -44,6 +44,62 @@ import Container from "@/layouts/Container.astro"
               <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
             </span>
             All Is Well
+          </div>
+        </div>
+      </Container>
+    </section>
+
+    <section class="py-5 overflow-hidden border-t border-black/10 dark:border-white/25 bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-purple-50/50 dark:from-blue-950/20 dark:via-indigo-950/15 dark:to-purple-950/20">
+      <Container size="md">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2 text-sm font-semibold text-center sm:text-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+            <span class="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+              Friend Links
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center sm:justify-start">
+            {
+              FRIEND_LINKS.map((LINK, index) => {
+                const colorClasses = {
+                  purple: 'border-purple-300/50 dark:border-purple-600/50 hover:border-purple-400 dark:hover:border-purple-500 hover:shadow-purple-200/50 dark:hover:shadow-purple-800/50',
+                  violet: 'border-violet-300/50 dark:border-violet-600/50 hover:border-violet-400 dark:hover:border-violet-500 hover:shadow-violet-200/50 dark:hover:shadow-violet-800/50',
+                  fuchsia: 'border-fuchsia-300/50 dark:border-fuchsia-600/50 hover:border-fuchsia-400 dark:hover:border-fuchsia-500 hover:shadow-fuchsia-200/50 dark:hover:shadow-fuchsia-800/50',
+                  indigo: 'border-indigo-300/50 dark:border-indigo-600/50 hover:border-indigo-400 dark:hover:border-indigo-500 hover:shadow-indigo-200/50 dark:hover:shadow-indigo-800/50',
+                  plum: 'border-pink-300/50 dark:border-purple-600/50 hover:border-pink-400 dark:hover:border-purple-500 hover:shadow-pink-200/50 dark:hover:shadow-purple-800/50'
+                };
+                const colorClass = colorClasses[LINK.COLOR as keyof typeof colorClasses] || colorClasses.purple;
+                
+                return (
+                  <a
+                    href={LINK.HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class={`group flex items-center gap-3 p-3 pr-4 rounded-xl border-2 ${colorClass} backdrop-blur-md bg-white/70 dark:bg-black/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out`}
+                  >
+                    {LINK.ICON && (
+                      <div class="flex items-center justify-center w-6 h-6 group-hover:scale-110 transition-all duration-300 ease-in-out icon-container">
+                        <img 
+                          src={LINK.ICON} 
+                          alt={`${LINK.NAME} icon`} 
+                          class="w-full h-full object-contain friend-link-icon" 
+                        />
+                      </div>
+                    )}
+                    <div class="flex flex-col">
+                      <div class="font-semibold text-sm text-gray-900 dark:text-gray-100 group-hover:text-black dark:group-hover:text-white transition-colors duration-300 ease-in-out whitespace-nowrap">
+                        {LINK.NAME}
+                      </div>
+                      <div class="text-xs text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-300 transition-colors duration-300 ease-in-out">
+                        {LINK.DESCRIPTION}
+                      </div>
+                    </div>
+                  </a>
+                );
+              })
+            }
           </div>
         </div>
       </Container>
@@ -122,3 +178,22 @@ import Container from "@/layouts/Container.astro"
   document.addEventListener("astro:after-swap", inintializeBackToTop)
   inintializeBackToTop()
 </script>
+
+<style>
+  .friend-link-icon {
+    filter: brightness(0) saturate(100%) invert(35%) sepia(85%) saturate(2900%) hue-rotate(200deg) brightness(90%) contrast(95%);
+    transition: filter 300ms ease-in-out;
+  }
+
+  :global(.dark) .friend-link-icon {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(85%) saturate(2000%) hue-rotate(200deg) brightness(110%) contrast(90%);
+  }
+
+  .group:hover .friend-link-icon {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(85%) saturate(3500%) hue-rotate(200deg) brightness(95%) contrast(100%);
+  }
+
+  :global(.dark) .group:hover .friend-link-icon {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(50%) saturate(1500%) hue-rotate(200deg) brightness(115%) contrast(95%);
+  }
+</style>
