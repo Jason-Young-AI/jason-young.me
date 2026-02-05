@@ -11,6 +11,14 @@ const { entry } = Astro.props
 const { collection, data, body } = entry
 const { title, summary, date } = data
 
+const cofirstAuthors = collection === "publications" ? (data.cofirstAuthors ?? []) : []
+const correspondingAuthors = collection === "publications" ? (data.correspondingAuthors ?? []) : []
+const formattedAuthors = data.authors.map((author) => ({
+  name: author,
+  cofirst: cofirstAuthors.includes(author),
+  corresponding: correspondingAuthors.includes(author),
+}))
+
 const arxivLink = collection === "publications" ? data.arxivLink : null
 const officialLink = collection === "publications" ? data.officialLink : null
 const sourceLink = collection === "projects" ? data.sourceLink : null
@@ -50,9 +58,46 @@ const originalLink = collection === "posts" ? data.originalLink : null
       Authors:
     </div>
     <div class="text-sm px-1 py-0.5">
-      {entry.data.authors.join(', ')}
+      {formattedAuthors.map((author, index) => (
+        <span>
+          {index > 0 && ", "}
+          {author.name}{author.cofirst&&<sup class="ml-[1px] relative top-[-2px] text-[10px]">†</sup>}{author.corresponding&&<sup class="ml-[1px] relative top-[-2px] text-[10px]">*</sup>}
+        </span>
+      ))}
     </div>
   </div>
+
+  {(entry.collection == 'publications' && cofirstAuthors.length > 0) &&
+    <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+      <div class="text-sm font-bold">
+        Co-first:
+      </div>
+      <div class="text-sm py-0.5">
+        {cofirstAuthors.map((author, index) => (
+          <span>
+            {index > 0 && ", "}
+            {author}<sup class="ml-[1px] relative top-[-2px] text-[10px]">†</sup>
+          </span>
+        ))}
+      </div>
+    </div>
+  }
+
+  {(entry.collection == 'publications' && correspondingAuthors.length > 0) &&
+    <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+      <div class="text-sm font-bold">
+        Corresponding:
+      </div>
+      <div class="text-sm py-0.5">
+        {correspondingAuthors.map((author, index) => (
+          <span>
+            {index > 0 && ", "}
+            {author}<sup class="ml-[1px] relative top-[-2px] text-[10px]">*</sup>
+          </span>
+        ))}
+      </div>
+    </div>
+  }
 
   {(entry.collection == 'publications') &&
     <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">

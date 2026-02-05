@@ -4,6 +4,8 @@ export type PublicationData = {
   summary: string;
   abstract: string;
   authors: string[];
+  cofirstAuthors?: string[];
+  correspondingAuthors?: string[];
   position: string;
   date: string; // .astro toISOString
   tags: string[];

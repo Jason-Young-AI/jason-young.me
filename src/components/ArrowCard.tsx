@@ -7,6 +7,17 @@ type Props = {
 }
 
 export default function ArrowCard({entry, pill}: Props) {
+  const cofirstAuthors = entry.collection === "publications" ? (entry.data.cofirstAuthors ?? []) : []
+  const correspondingAuthors = entry.collection === "publications" ? (entry.data.correspondingAuthors ?? []) : []
+
+  const renderAuthor = (author: string) => (
+    <span>
+      {author}
+      {cofirstAuthors.includes(author) && <sup class="ml-[1px] relative top-[1px] text-[10px]">†</sup>}
+      {correspondingAuthors.includes(author) && <sup class="ml-[1px] relative top-[1px] text-[10px]">*</sup>}
+    </span>
+  )
+
     return (
       <a href={`/${entry.collection}/${entry.slug}`} class="group p-4 gap-3 flex items-center border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
       <div class="w-full group-hover:text-black group-hover:dark:text-white blend">
@@ -30,20 +41,52 @@ export default function ArrowCard({entry, pill}: Props) {
           </div>
           {(entry.data.authors.length == 1) &&
             <div class="text-sm px-1 py-0.5">
-              {entry.data.authors[0]}
+              {renderAuthor(entry.data.authors[0])}
             </div>
           }
           {(entry.data.authors.length == 2) &&
             <div class="text-sm px-1 py-0.5">
-              {entry.data.authors[0]} and {entry.data.authors[1]}
+              {renderAuthor(entry.data.authors[0])} and {renderAuthor(entry.data.authors[1])}
             </div>
           }
           {(entry.data.authors.length >= 3) &&
             <div class="text-sm px-1 py-0.5">
-              {entry.data.authors[0]} et al.
+              {renderAuthor(entry.data.authors[0])} et al.
             </div>
           }
         </div>
+
+        {(entry.collection == 'publications' && correspondingAuthors.length > 0) &&
+          <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+            <div class="text-sm font-bold">
+              Corresponding:
+            </div>
+            <div class="text-sm py-0.5">
+              {correspondingAuthors.map((author, index) => (
+                <span>
+                  {index > 0 && ", "}
+                  {author}<sup class="ml-[1px] relative top-[-2px] text-[10px]">*</sup>
+                </span>
+              ))}
+            </div>
+          </div>
+        }
+
+        {(entry.collection == 'publications' && cofirstAuthors.length > 0) &&
+          <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">
+            <div class="text-sm font-bold">
+              Co-first:
+            </div>
+            <div class="text-sm py-0.5">
+              {cofirstAuthors.map((author, index) => (
+                <span>
+                  {index > 0 && ", "}
+                  {author}<sup class="ml-[1px] relative top-[-2px] text-[10px]">†</sup>
+                </span>
+              ))}
+            </div>
+          </div>
+        }
 
         {(entry.collection == 'publications') &&
           <div class="flex flex-wrap items-center mt-0 mb-1 gap-1">

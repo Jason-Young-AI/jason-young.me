@@ -7,6 +7,8 @@ const publications = defineCollection({
     summary: z.string(),
     abstract: z.string(),
     authors: z.array(z.string()),
+    cofirstAuthors: z.array(z.string()).optional(),
+    correspondingAuthors: z.array(z.string()).optional(),
     position: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()),
