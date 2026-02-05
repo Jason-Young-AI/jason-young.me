@@ -10,3 +10,5 @@ I am a Special Research Assistant at the Institute of Computing Technology, Chin
 My research is centered on **Evaluatology for Artificial Intelligence**, a new direction aimed at scientifically and objectively evaluating AI's performance in real-world applications. My early work concentrated on Neural Machine Translation; however, I identified the paramount importance of evaluating AI systems' actual capabilities in real-world applications. This insight prompted me to dedicate my scholarly pursuits to the emerging field of Evaluatology for AI.
 
 Currently, my research endeavors are concentrated on "Artificial Intelligence Designed Artificial Intelligence, AIDAI."
+
+I am currently assisting Prof. Jianfeng Zhan in supervising 1 Ph.D. student (Yikang Yang) and 1 Master's student (Luzhou Peng), whose research directions align with my research interests.
