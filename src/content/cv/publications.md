@@ -7,20 +7,24 @@ draft: false
 
 <span style="color:mediumpurple"><b>Recent Research</b></span>
 
+- **GraDE: A Graph Diffusion Estimator for Frequent Subgraph Discovery in Neural Architectures**.
+<span style="color:gray">Yikang Yang, <b>Zhengxin Yang*</b>, Minghao Luo, Luzhou Peng, Hongxiao Li, Wanling Gao, Lei Wang, Jianfeng Zhan.</span>
+*Preprint*
+
 - **Evaluatology: The Science and Engineering of Evaluation**.
 <span style="color:gray">Jianfeng Zhan, Lei Wang, Wanling Gao, Hongxiao Li, Chenxi Wang, Yunyou Huang, Yatao Li, <b>Zhengxin Yang</b>, Guoxin Kang, Chunjie Luo, Hainan Ye, Shaopeng Dai, Zhifei Zhang.</span>
 *TBench 2024*
 
 - **Algorithmic Fairness in Social Context**.
-<span style="color:gray">Yunyou Huang, Wenjing Liu, Wanling Gao, Xiangjiang Lu, Xiaoshuang Liang, <b>Zhengxin Yang</b>, Hongxiao Li, Li Ma, Suqing Tang.</span>
+<span style="color:gray">Yunyou Huang, Wenjing Liu, Wanling Gao, Xiangjiang Lu, Xiaoshuang Liang, <b>Zhengxin Yang</b>, Hongxiao Li, Li Ma, Suqing Tang*.</span>
 *TBench 2023*
 
 - **Quality at the Tail of Machine Learning Inference**.
-<span style="color:gray"><b>Zhengxin Yang</b>, Wanling Gao, Chunjie Luo, Lei Wang, Fei Tang, Xu Wen, Jianfeng Zhan</span>.
+<span style="color:gray"><b>Zhengxin Yang</b>, Wanling Gao, Chunjie Luo, Lei Wang, Fei Tang, Xu Wen, Jianfeng Zhan*</span>.
 *Under Review*
 
 - **Big Medical Data and Medical AI Standards: Status Quo,Opportunities and Challenges**.
-<span style="color:gray">Zhang Zhifei, <b>Zhengxin Yang</b>, Huang Yunyou, Z. Jianfeng.</span>
+<span style="color:gray">Zhifei Zhang, <b>Zhengxin Yang</b>, Yunyou Huang*, Jianfeng Zhan*.</span>
 *XHYXZZ 2021*
 
 <span style="color:mediumpurple"><b>Early Research</b></span>
@@ -36,6 +40,6 @@ draft: false
 <span style="color:gray"><b>Zhengxin Yang</b>, Jinchao Zhang, Fandong Meng, Shuhao Gu, Yang Feng, Jie Zhou.</span>
 *EMNLP 2019*
 
-- **Uyghur-to-Chinese neural machine translation based on incremental training**.
+- **Uyghur-to-Chinese Neural Machine Translation Based on Incremental Training**.
 <span style="color:gray"><b>Zhengxin Yang</b>, Jingyu Li, Jiawei Hu, Yang Feng.</span>
 *JXMU 2019*
