@@ -19,9 +19,34 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"posts">
 const post = Astro.props
 const { title, summary } = post.data
+const site = Astro.site ?? new URL(Astro.url).origin
+const canonicalUrl = new URL(Astro.url.pathname, site).href
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": `${canonicalUrl}#article`,
+  "headline": title,
+  "description": summary,
+  "inLanguage": "en",
+  "datePublished": post.data.date.toISOString(),
+  "dateModified": post.data.date.toISOString(),
+  "keywords": post.data.tags,
+  "publisher": { "@id": `${site}#organization` },
+  "author": post.data.authors.map((name) => ({
+    "@type": "Person",
+    "name": name,
+  })),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+  },
+  "url": canonicalUrl,
+  "image": new URL("/logos/logo-no-background.svg", site).href,
+}
 ---
 
-<PageLayout title={title} description={summary}>
+<PageLayout title={title} description={summary} schema={schema}>
   <TopLayout>
     <div class="animate">
       <ArticleTopLayout entry={post}/>

@@ -6,9 +6,10 @@ interface Props {
   description: string
   image?: string
   home?: boolean
+  schema?: Record<string, unknown> | Array<Record<string, unknown>>
 }
 
-const { title, description, image = "/logos/logo-no-background.svg", home = false} = Astro.props
+const { title, description, image = "/logos/logo-no-background.svg", home = false, schema } = Astro.props
 
 const site = Astro.site ?? new URL(Astro.url).origin
 const canonical = new URL(Astro.url.pathname, site).href
@@ -17,10 +18,28 @@ const exact_url = new URL(Astro.url.pathname + Astro.url.search + Astro.url.hash
 const exact_image = new URL(image, site).href
 const exact_title = home ? `Jason Young ( 杨郑鑫 / Zhengxin Yang ) – ${title}` : title
 const exact_description = description?.match(/Jason Young|杨郑鑫|Zhengxin Yang/i) ? description : `${description} - Jason Young (杨郑鑫 / Zhengxin Yang)`
+const pathSegments = Astro.url.pathname.split("/").filter(Boolean)
+const isHiddenPage = Astro.url.pathname === "/hidden" || Astro.url.pathname.startsWith("/hidden/")
+
+const breadcrumbItems = [
+  {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": site,
+  },
+  ...pathSegments.map((segment, index) => ({
+    "@type": "ListItem",
+    "position": index + 2,
+    "name": decodeURIComponent(segment).replace(/[-_]/g, " "),
+    "item": new URL(pathSegments.slice(0, index + 1).join("/") + "/", site).href,
+  })),
+]
 
 const exact_person = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${site}#person`,
   "name": "杨郑鑫",
   "alternateName": ["Jason Young", "Zhengxin Yang"],
   "url": site,
@@ -29,8 +48,64 @@ const exact_person = {
     "https://www.linkedin.com/in/zhengxinyang/",
     "https://orcid.org/0000-0001-5969-0083"
   ],
+  "worksFor": { "@id": `${site}#organization` },
   "description": "Jason Young (杨郑鑫 / Zhengxin Yang) - Personal Website"
 }
+
+const exact_organization = {
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "@id": `${site}#organization`,
+  "name": "Jason Young Research",
+  "url": site,
+  "logo": {
+    "@type": "ImageObject",
+    "url": new URL("/logos/logo-no-background.svg", site).href,
+  },
+  "founder": { "@id": `${site}#person` },
+  "sameAs": [
+    "https://github.com/Jason-Young-AI",
+    "https://www.linkedin.com/in/zhengxinyang/"
+  ],
+}
+
+const exact_website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site}#website`,
+  "url": site,
+  "name": "Jason Young",
+  "inLanguage": "en",
+  "description": exact_description,
+  "publisher": { "@id": `${site}#organization` },
+}
+
+const exact_webpage = {
+  "@context": "https://schema.org",
+  "@type": home ? "ProfilePage" : "WebPage",
+  "@id": `${exact_url}#webpage`,
+  "url": exact_url,
+  "name": exact_title,
+  "description": exact_description,
+  "inLanguage": "en",
+  "isPartOf": { "@id": `${site}#website` },
+  "publisher": { "@id": `${site}#organization` },
+  "about": { "@id": `${site}#person` },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": exact_image,
+  },
+}
+
+const exact_breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems,
+}
+
+const baseSchemas = [exact_person, exact_organization, exact_website, exact_webpage, exact_breadcrumb]
+const pageSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : []
+const mergedSchemas = [...baseSchemas, ...pageSchemas]
 
 
 ---
@@ -51,6 +126,11 @@ const exact_person = {
 <title>{exact_title}</title>
 <meta name="title" content={exact_title} />
 <meta name="description" content={exact_description} />
+{isHiddenPage ? (
+  <meta name="robots" content="noindex, nofollow" />
+) : (
+  <meta name="robots" content="index, follow" />
+)}
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -67,7 +147,9 @@ const exact_person = {
 <meta property="twitter:image" content={exact_image} />
 
 <!-- JSON-LD -->
-<script type="application/ld+json" is:inline set:html={JSON.stringify(exact_person)} />
+{mergedSchemas.map((item) => (
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(item)} />
+))}
 
 <!-- Sitemap -->
 <!-- <link rel="sitemap" href="/sitemap-index.xml" /> -->

@@ -27,5 +27,12 @@ export default defineConfig({
     ],
   },
   site: "https://jason-young.me",
-  integrations: [mdx(), sitemap(), solidJs(), tailwind({ applyBaseStyles: false })],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes('/hidden'),
+    }),
+    solidJs(),
+    tailwind({ applyBaseStyles: false }),
+  ],
 })

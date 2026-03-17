@@ -11,13 +11,13 @@ import Footer from "@/layouts/Footer.astro"
 import Drawer from "@/layouts/Drawer.astro"
 
 
-const { title, description, home } = Astro.props
+const { title, description, home, schema } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-pt-20">
   <head>
-    <Meta title={`${title} | ${SITE.TITLE}`} description={description} home={home}/>
+    <Meta title={`${title} | ${SITE.TITLE}`} description={description} home={home} schema={schema} />
   </head>
   <body>
     <Header />

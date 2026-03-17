@@ -21,9 +21,31 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"publications">
 const publication = Astro.props
 const { title, summary } = publication.data
+const site = Astro.site ?? new URL(Astro.url).origin
+const canonicalUrl = new URL(Astro.url.pathname, site).href
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": `${canonicalUrl}#scholarly-article`,
+  "headline": title,
+  "description": summary,
+  "abstract": publication.data.abstract,
+  "inLanguage": "en",
+  "datePublished": publication.data.date.toISOString(),
+  "dateModified": publication.data.date.toISOString(),
+  "keywords": publication.data.tags,
+  "publisher": { "@id": `${site}#organization` },
+  "author": publication.data.authors.map((name) => ({
+    "@type": "Person",
+    "name": name,
+  })),
+  "url": canonicalUrl,
+  "sameAs": [publication.data.arxivLink, publication.data.officialLink].filter(Boolean),
+}
 ---
 
-<PageLayout title={title} description={summary}>
+<PageLayout title={title} description={summary} schema={schema}>
   <TopLayout>
     <div class="animate">
       <ArticleTopLayout entry={publication} />
