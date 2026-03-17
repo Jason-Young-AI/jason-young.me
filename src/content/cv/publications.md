@@ -7,6 +7,10 @@ draft: false
 
 <span style="color:mediumpurple"><b>Recent Research</b></span>
 
+- **Probing Memes in LLMs: A Paradigm for the Entangled Evaluation World**.
+<span style="color:gray">Luzhou Peng, <b>Zhengxin Yang*</b>, Honglu Ji, Yikang Yang, Fanda Fan, Wanling Gao, Jiayuan Ge, Yilin Han, Jianfeng Zhan.</span>
+*Preprint*
+
 - **GraDE: A Graph Diffusion Estimator for Frequent Subgraph Discovery in Neural Architectures**.
 <span style="color:gray">Yikang Yang, <b>Zhengxin Yang*</b>, Minghao Luo, Luzhou Peng, Hongxiao Li, Wanling Gao, Lei Wang, Jianfeng Zhan.</span>
 *Preprint*
