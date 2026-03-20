@@ -91,6 +91,7 @@ const exact_webpage = {
   "isPartOf": { "@id": `${site}#website` },
   "publisher": { "@id": `${site}#organization` },
   "about": { "@id": `${site}#person` },
+  ...(home ? { "mainEntity": { "@id": `${site}#person` } } : {}),
   "primaryImageOfPage": {
     "@type": "ImageObject",
     "url": exact_image,
