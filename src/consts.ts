@@ -94,6 +94,13 @@ export const FRIEND_LINKS: FriendLinks = [
     COLOR: "violet"
   },
   {
+    NAME: "BenchCouncil Press",
+    DESCRIPTION: "Press of International Open Benchmark Council",
+    HREF: "https://press.benchcouncil.org/",
+    ICON: "/icons/benchcouncil.svg",
+    COLOR: "fuchsia"
+  },
+  {
     NAME: "BenchCouncil",
     DESCRIPTION: "International Open Benchmark Council",
     HREF: "https://www.benchcouncil.org/",
