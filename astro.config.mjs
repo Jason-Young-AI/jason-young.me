@@ -3,7 +3,8 @@ import { defineConfig } from "astro/config"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 import solidJs from "@astrojs/solid-js"
-import tailwind from "@astrojs/tailwind"
+import tailwindcss from "@tailwindcss/vite"
+import { unified } from "@astrojs/markdown-remark"
 
 import remarkToc from 'remark-toc';
 import remarkMath from 'remark-math'
@@ -16,15 +17,20 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 export default defineConfig({
   markdown: {
     syntaxHighlight: "prism",
-    remarkPlugins: [
-      remarkMath,
-      [remarkToc, { heading: "contents"} ],
-    ],
-    rehypePlugins: [
-      rehypeKatex,
-      rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: 'append' }]
-    ],
+    processor: unified({
+      remarkPlugins: [
+        remarkMath,
+        [remarkToc, { heading: "contents" }],
+      ],
+      rehypePlugins: [
+        rehypeKatex,
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: "append" }],
+      ],
+    }),
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
   site: "https://jason-young.me",
   integrations: [
@@ -33,6 +39,5 @@ export default defineConfig({
       filter: (page) => !page.includes('/hidden'),
     }),
     solidJs(),
-    tailwind({ applyBaseStyles: false }),
   ],
 })

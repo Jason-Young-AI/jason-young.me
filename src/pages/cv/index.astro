@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection, render } from "astro:content"
 import PageLayout from "@/layouts/PageLayout.astro"
 import TopLayout from "@/layouts/TopLayout.astro"
 import BottomLayout from "@/layouts/BottomLayout.astro"
@@ -9,7 +9,7 @@ const collection = await getCollection("cv")
 
 const cv = await Promise.all(
   collection.filter(collection => !collection.data.draft).sort((a, b) => a.data.order - b.data.order).map(async (item) => {
-    const { Content } = await item.render()
+    const { Content } = await render(item)
     return { ...item, Content }
   })
 )

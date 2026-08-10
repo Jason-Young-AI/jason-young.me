@@ -12,7 +12,7 @@ const posts = (await getCollection("posts"))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .map(p => ({
-    slug: p.slug,
+    slug: p.id,
     collection: p.collection,
     data: {
       ...p.data,

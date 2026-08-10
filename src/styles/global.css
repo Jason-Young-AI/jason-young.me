@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   @font-face {
@@ -112,7 +113,7 @@ article img {
 }
 
 #twinkle-star.twinkle {
-  @apply animate-twinkle; /* defined in tailwind.config */
+  @apply animate-twinkle; /* defined via @theme below */
 }
 
 
@@ -121,13 +122,13 @@ article img {
  */
 
 #meteors .shower {
-  @apply absolute inset-0 top-0;;
+  @apply absolute inset-0 top-0;
   @apply left-1/2 -translate-x-1/2;
   @apply w-screen aspect-square;
 }
 
 #meteors .meteor {
-  @apply animate-meteor; /* defined in tailwind.config */
+  @apply animate-meteor; /* defined via @theme below */
   @apply absolute top-1/2 left-1/2 w-px h-[75vh];
   @apply bg-gradient-to-b from-white to-transparent;
 }
@@ -137,13 +138,54 @@ article img {
 }
 
 #meteors .shower.dr {
-  @apply rotate-135;
+  @apply rotate-[135deg];
 }
 
 #meteors .shower.dl {
-  @apply rotate-225;
+  @apply rotate-[225deg];
 }
 
 #meteors .shower.ul {
-  @apply rotate-315;
+  @apply rotate-[315deg];
+}
+
+@theme {
+  --font-sans: "Atkinson", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-twinkle: twinkle 2s ease-in-out forwards;
+  --animate-meteor: meteor 3s ease-in-out forwards;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes meteor {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
 }
