@@ -18,7 +18,7 @@ jobs:
         run: npm ci
       - name: Build site
         env:
-          PUBLIC_YANGSAI_RESEARCH_API: ${{ vars['PUBLIC_YANGSAI_RESEARCH_API'] }}
+          PUBLIC_YANGSAI_RESEARCH_API: ${{ vars.PUBLIC_YANGSAI_RESEARCH_API }}
         run: npm run build
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main

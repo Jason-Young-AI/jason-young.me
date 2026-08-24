@@ -58,6 +58,11 @@ let cached: Promise<{
   projects: ProjectEntry[];
 }> | null = null;
 
+const emptyResearchData = {
+  publications: [] as PublicationEntry[],
+  projects: [] as ProjectEntry[],
+};
+
 const parseDate = (value: string) => {
   const date = new Date(value);
   if (!Number.isNaN(date.getTime())) {
@@ -115,27 +120,41 @@ const projectToEntry = (item: YangsAiProject): ProjectEntry => ({
 
 export async function getYangsAiResearchData() {
   if (!cached) {
-    cached = fetch(endpoint)
-      .then(async (response) => {
+    cached = (async () => {
+      try {
+        const response = await fetch(endpoint);
         if (!response.ok) {
           throw new Error(`Failed to fetch ${endpoint}: ${response.status}`);
         }
-        return response.json() as Promise<YangsAiResearchPayload>;
-      })
-      .then((payload) => ({
-        publications: payload.publications
-          .map(publicationToEntry)
-          .sort(
-            (a, b) =>
-              new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-          ),
-        projects: payload.projects
-          .map(projectToEntry)
-          .sort(
-            (a, b) =>
-              new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-          ),
-      }));
+
+        const payload = (await response.json()) as YangsAiResearchPayload;
+        const publications = Array.isArray(payload.publications)
+          ? payload.publications
+          : [];
+        const projects = Array.isArray(payload.projects) ? payload.projects : [];
+
+        return {
+          publications: publications
+            .map(publicationToEntry)
+            .sort(
+              (a, b) =>
+                new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+            ),
+          projects: projects
+            .map(projectToEntry)
+            .sort(
+              (a, b) =>
+                new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+            ),
+        };
+      } catch (error) {
+        console.warn(
+          `[yangsai] Failed to fetch remote research data from ${endpoint}. Falling back to empty data.`,
+          error,
+        );
+        return emptyResearchData;
+      }
+    })();
   }
 
   return cached;
