@@ -1,6 +1,7 @@
 ---
-import type { PublicationEntry, ProjectEntry, PostEntry } from "@/types/content"
+import type { PostEntry } from "@/types/content"
 import { getCollection } from "astro:content"
+import { getYangsAiResearchData } from "@/lib/yangsai"
 import { SITE, SOCIALS } from "@/consts"
 
 import PageLayout from "@/layouts/PageLayout.astro"
@@ -9,33 +10,11 @@ import TwinklingStars from "@/components/TwinklingStars.astro"
 import MeteorShower from "@/components/MeteorShower.astro"
 
 
-const publications = (await getCollection("publications"))
-  .filter(publication => publication.data.select)
-  .filter(publication => !publication.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
-  .map<PublicationEntry>(p => ({
-    slug: p.id,
-    collection: "publications",
-    data: {
-      ...p.data,
-      date: p.data.date.toISOString(),
-    },
-  }));
+const { publications: remotePublications } = await getYangsAiResearchData()
 
-const projects = (await getCollection("projects"))
-  .filter(project => project.data.select)
-  .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+const publications = remotePublications
+  .filter(publication => publication.data.select)
   .slice(0,3)
-  .map<ProjectEntry>(p => ({
-    slug: p.id,
-    collection: "projects",
-    data: {
-      ...p.data,
-      date: p.data.date.toISOString(),
-    },
-  }));
 
 const posts = (await getCollection("posts"))
   .filter(post => post.data.select)
@@ -113,6 +92,9 @@ const posts = (await getCollection("posts"))
             <a href='/publications' class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
               View My Publications
             </a>
+            <a href='https://yangs.ai' target="_blank" rel="noreferrer" class='py-2 px-4 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend'>
+              Learn More at Yangs AI
+            </a>
           </div>
         </div>
       </div>
@@ -154,29 +136,6 @@ const posts = (await getCollection("posts"))
             {publications.map((publication) => (
               <li>
                 <ArrowCard entry={publication}/>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <!-- Selected Project Section -->
-      <section class="animate">
-        <div class="space-y-4">
-          <div class="flex justify-between">
-            <p class="font-semibold text-black dark:text-white">
-              Selected Projects
-            </p>
-            <a href="/projects" class="w-fit col-span-3 group flex gap-1 items-center underline decoration-[.5px] decoration-black/25 dark:decoration-white/50 hover:decoration-black dark:hover:decoration-white text-black dark:text-white underline-offset-2 blend">
-              <span class="text-black/75 dark:text-white/75 group-hover:text-black group-hover:dark:text-white blend">
-                All Projects
-              </span>
-            </a>
-          </div>
-          <ul class="space-y-4">
-            {projects.map((project) => (
-              <li>
-                <ArrowCard entry={project} />
               </li>
             ))}
           </ul>

@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from "astro:content"
+import { getYangsAiResearchData } from "@/lib/yangsai"
+import ArrowCard from "@/components/ArrowCard"
 import PageLayout from "@/layouts/PageLayout.astro"
 import TopLayout from "@/layouts/TopLayout.astro"
 import BottomLayout from "@/layouts/BottomLayout.astro"
@@ -13,6 +15,12 @@ const cv = await Promise.all(
     return { ...item, Content }
   })
 )
+
+const { publications } = await getYangsAiResearchData()
+const recentPublications = (publications.filter((publication) => publication.data.select).length > 0
+  ? publications.filter((publication) => publication.data.select)
+  : publications
+).slice(0, 6)
 
 ---
 
@@ -35,9 +43,24 @@ const cv = await Promise.all(
               {entry.data.subtitle}
               </div>
             }
-            <article class="prose dark:prose-invert">
-              <entry.Content />
-            </article>
+            {entry.id === "publications.md" ? (
+              <div class="mt-4">
+                <div class="text-sm uppercase mb-2 font-semibold tracking-wide">
+                  Recent Research
+                </div>
+                <ul class="flex flex-col gap-3">
+                  {recentPublications.map((publication) => (
+                    <li>
+                      <ArrowCard entry={publication} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <article class="prose dark:prose-invert">
+                <entry.Content />
+              </article>
+            )}
           </li>
         ))
       }

@@ -6,7 +6,7 @@ export type PublicationData = {
   authors: string[];
   cofirstAuthors?: string[];
   correspondingAuthors?: string[];
-  position: string;
+  position?: string;
   date: string; // .astro toISOString
   tags: string[];
   type: string;
@@ -14,6 +14,9 @@ export type PublicationData = {
   select?: boolean;
   arxivLink?: string;
   officialLink?: string;
+  href?: string;
+  bibtex?: string;
+  yangsAiDetailUrl?: string;
 };
 
 export type PublicationEntry = {
@@ -32,6 +35,7 @@ export type ProjectData = {
   draft?: boolean;
   select?: boolean;
   sourceLink?: string;
+  href?: string;
 };
 
 export type ProjectEntry = {
